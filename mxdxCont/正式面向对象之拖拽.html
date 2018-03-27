@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>面向对象之拖拽</title>
+	</head>
+	<style type="text/css">		
+		* { margin: 0; padding: 0; }
+		.container { width: 200px; height: 200px; position: absolute; top: 0; left: 0; background-color: red; }
+	</style>
+	<body>
+		<div class="container" id="container"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		var z1 = new Drag();
+		z1.init();
+	}
+	
+	function Drag(){
+		this.oCont = document.getElementById('container');
+		this.disX = 0; 
+		this.disY = 0;
+		
+	}
+	
+	Drag.prototype.init = function(){
+		var _this = this;
+		this.oCont.onmousedown = function(e){
+			e = e || e.event;
+			_this.mouseDown
+		};
+	}
+	
+	Drag.prototype.mouseDown = function(e){
+		var _this = this;
+		this.disX = e.clientX - this.oCont.offsetLeft;
+		this.disY = e.clientY - this.oCont.offsetTop;
+		
+		document.onmousemove = function(e){
+			var e = e || e.event;
+			_this.mouseMove(e);
+		};
+		document.onmouseup = function(e){
+			_this.mouseUp(e)
+		};
+		return false
+	}
+	
+	Drag.prototype.mouseMove = funct ion(e){
+		this.oCont.style.left = e.clientX - this.disX + 'px';
+		this.oCont.style.top  = e.clientY - this.disY + 'px'
+	}
+	
+	Drag.prototype.mouseUp = function(){
+		document.onmousemove = null;
+		document.onmouseup = null
+	}
+</script>

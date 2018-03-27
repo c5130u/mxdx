@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>面向对象</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	function CreatePerson(name){
+		this.name = name;
+	};
+	CreatePerson.prototype.showName = function(){
+		alert(this.name);
+	}
+	
+	var p1 = new CreatePerson('小明');
+	alert(p1.showName());
+	var p2 = new CreatePerson('小强')
+	//alert(p2.showName == p1.showName); //true
+	
+</script>

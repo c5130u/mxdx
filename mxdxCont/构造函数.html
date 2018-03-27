@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>面向对象</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	//当new调用一个函数的时候，函数中的this就是函数创建的对象，而且函数的返回值是this(隐式返回)
+	function CreatePerson(name){
+		this.name = name;
+		this.showName = function(){
+			alert(this.name);
+		}
+	};
+	
+	var p1 = new CreatePerson('小明');
+	p1.showName();
+	
+	var p2 = new CreatePerson('小强');
+	p1.showName();
+
+</script>
