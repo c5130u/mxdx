@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>面向对象之拷贝继承</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	/*var a = {
+		name: '小明'
+	}
+	
+	var b = a;
+	
+	b.name = '小强';
+	
+	alert(a.name);*///小强 那么我想要的结果是小明该怎么操作
+	
+	var a = {
+		name : '小明'
+	}
+	var b = {};
+	extend( b , a );
+	/*for( var attr in a ){
+		b[attr] = a[attr]
+	}*/
+	
+	//封装成函数
+	
+	function extend( obj1, obj2 ){
+		for( var attr in obj2 ){
+			obj1[attr] = obj2[attr];
+		}
+	}
+	alert(a.name);
+</script>

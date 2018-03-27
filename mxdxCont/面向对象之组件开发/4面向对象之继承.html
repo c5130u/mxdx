@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>面向对象之继承</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//继承： 子类不影响弗雷，子类可以继承弗雷的一些功能（代码复用）
+	//属性的继承：运用 call 调用父类的构造函数
+	//方法的继承：将被继承的原型赋值个继承的构造函数的原型 for in  拷贝继承 jquery 亦采用拷贝继承extend；
+	function CreatePerson(name,sex){
+		this.name = name;
+		this.sex = sex;
+	}
+	CreatePerson.prototype.showName = function(){
+		alert(this.name);
+	}
+	var p1 = new CreatePerson('小明','男');
+	p1.showName();
+	
+	function CreateStar(name, sex, job ){
+		CreatePerson.call(this,name,sex);
+		this.job = job;	
+	}
+	
+	CreateStar.prototype = CreatePerson.prototype;
+	
+	var p2 = new CreateStar('小红','女','模特');
+	p2.showName();
+	
+</script>
