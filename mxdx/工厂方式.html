@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>面向对象</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	//工厂方式：封装函数
+	function createPerson(name){
+		//原料
+		var obj = new Object();
+		
+		//加工
+		obj.name = name;
+		obj.showName = function(){
+			alert(this.name);
+		}
+		
+		//出厂
+		return obj;
+	};
+	var p1 = createPerson('小明');
+	p1.showName();
+</script>

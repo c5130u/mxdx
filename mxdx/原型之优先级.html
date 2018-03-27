@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var a = [2,34,5];
+	a.sum = 12;
+	Array.prototype.sum = 10;
+	
+	alert(a.sum); // a.sum是 style，而Array.prototyle.sum则为class; 所以结果是12
+</script>
